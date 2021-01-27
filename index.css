@@ -39,8 +39,8 @@ html {
   width: 200px;
   border-radius: 50%;
   border: 10px solid #ef5734;
-  background-color: #7ee8fa;
-  background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+ background-color: #fbb034;
+background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
 }
 .btn-grad {
   background-color: #f6d327;
