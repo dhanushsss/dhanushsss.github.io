@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 /* font-family: 'Josefin Sans', sans-serif;
- */
-/* font-family: 'Monoton', cursive;
  */
 * {
   margin: 0px;
@@ -192,11 +189,11 @@ html::-webkit-scrollbar {
 .home header .link-wrapper ul li a:hover {
   color: #bf1363;
 }
-.home header .link-wrapper ul li:nth-child(4) a {
+.home header .link-wrapper ul li:last-child a {
   font-size: 1rem;
   padding: 10px 10px;
 }
-.home header .link-wrapper ul li:nth-child(4) a:hover {
+.home header .link-wrapper ul li:last-child a:hover {
   color: #f8f8f8;
 }
 .home .container {
@@ -222,6 +219,13 @@ html::-webkit-scrollbar {
   letter-spacing: -3px;
   color: rgba(248, 248, 248, 0.5);
 }
+.home .container .hero-text .summary {
+  margin-top: 30px;
+  max-width: 850px;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: rgba(248, 248, 248, 0.7);
+}
 .home .container .hero-text .btn {
   margin-left: 10px;
   margin-top: 70px;
@@ -232,7 +236,7 @@ html::-webkit-scrollbar {
   margin-right: 30px;
 }
 .about {
-  height: 110vh;
+  min-height: 110vh;
   width: 100%;
   padding-left: 4%;
   background-color: #1c1b20;
@@ -241,7 +245,7 @@ html::-webkit-scrollbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  min-height: 110vh;
 }
 .about .container .left {
   width: 45%;
@@ -417,13 +421,25 @@ html::-webkit-scrollbar {
   .fa-github {
   font-size: 1.4rem;
 }
+.projects
+  .container
+  .tile-container
+  .tile-wrapper
+  .temp-overlay
+  .text-wrapper
+  .btn-container
+  a:only-child {
+  margin: 0 auto;
+}
 .projects .container .tile-container .tile-wrapper:hover {
   background-position-y: -20px;
 }
-.projects .container .tile-container .tile-wrapper:hover h3 {
+.projects .container .tile-container .tile-wrapper:hover h3,
+.projects .container .tile-container .tile-wrapper:focus-within h3 {
   top: 10%;
 }
-.projects .container .tile-container .tile-wrapper:hover .temp-overlay {
+.projects .container .tile-container .tile-wrapper:hover .temp-overlay,
+.projects .container .tile-container .tile-wrapper:focus-within .temp-overlay {
   top: 0;
 }
 
@@ -494,9 +510,6 @@ html::-webkit-scrollbar {
   .btn-wrapper:hover {
   color: #db536a;
 }
-.projects .container .tile-container .tile-4 {
-  background-image: url("images/projects/tesla.png");
-}
 .projects .container .tile-container .tile-5 .perm-overlay {
   background-color: rgba(214, 72, 59, 0.8);
 }
@@ -512,9 +525,6 @@ html::-webkit-scrollbar {
   .btn-wrapper:hover {
   color: #d6483b;
 }
-.projects .container .tile-container .tile-6 {
-  background-image: url("images/projects/mortage.png");
-}
 .projects .container .tile-container .tile-6 .perm-overlay {
   background-color: rgba(172, 48, 255, 0.85);
 }
@@ -529,6 +539,46 @@ html::-webkit-scrollbar {
   .btn-container
   .btn-wrapper:hover {
   color: rgba(172, 48, 255, 1);
+}
+.experience {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1c1b20;
+}
+.experience .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.experience .container .job {
+  max-width: 850px;
+  margin-top: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
+}
+.experience .container .job h3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.experience .container .job h3 span {
+  color: #ffc93c;
+}
+.experience .container .job .dates {
+  margin-top: 8px;
+  font-family: "SF Mono Regular";
+  font-size: 0.9rem;
+  color: rgba(248, 248, 248, 0.5);
+}
+.experience .container .job ul {
+  margin-top: 15px;
+  padding-left: 20px;
+  list-style: square;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.experience .container .job ul li::marker {
+  color: #ffc93c;
 }
 .contact {
   height: 100vh;
@@ -651,6 +701,9 @@ html::-webkit-scrollbar {
 
 .box3 span {
   color: #ff5851;
+}
+.box3 a {
+  color: inherit;
 }
 
 .role1 {
@@ -1184,3 +1237,14 @@ html::-webkit-scrollbar {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
